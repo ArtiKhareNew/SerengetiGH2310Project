@@ -8,10 +8,32 @@ packages:
   gitUsername: ArtiKhareNew
   gitBranch: main
 - name: SubstractPublicSvcPackage
+  version: "3.0"
   gitServerName: srcCtrl_shared_AzRepos_Arti
   gitUrl: https://dev.azure.com/ArtiKhare/SubstractPublicSvcPackage/_git
   gitUsername: ArtiKhare
   gitBranch: main
+services:
+- serviceName: project.serengetigh2310.integrations:azrepoPackage
+  packages:
+  - name: SerengetiGH2310Project
+    version: "1.0"
+  - name: SubstractPublicSvcPackage
+    version: "3.0"
+- serviceName: SubstractPublicSvcPackage:substract_svc
+  packages:
+  - name: SubstractPublicSvcPackage
+    version: "3.0"
+- serviceName: pub.math:subtractInts
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.1223
+- serviceName: project.serengetigh2310.streaming.connections:EmbeddedMessaging
+  packages:
+  - name: SerengetiGH2310Project
+    version: "1.0"
+  - name: SubstractPublicSvcPackage
+    version: "3.0"
 configurationVariables:
   jdbcfunc.SAPTxStore.failFastMode: false
   jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
